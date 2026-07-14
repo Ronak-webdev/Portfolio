@@ -11,7 +11,6 @@ import Loader from "./components/Loader";
 import ScrollProgressBar from "./components/ScrollProgressBar";
 import CursorGlow from "./components/CursorGlow";
 import { initLenis, destroyLenis } from "./lib/smoothScroll";
-import { Agentation } from 'agentation';
 
 const About = lazy(() => import("./components/About"));
 const Skills = lazy(() => import("./components/Skills"));
@@ -175,7 +174,6 @@ export default function App() {
             <AmbientSound />
           </div>
           <AIAssistant />
-          <Agentation />
         </motion.div>
       )}
     </AnimatePresence>

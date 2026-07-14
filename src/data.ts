@@ -94,7 +94,7 @@ export const PROJECTS: Project[] = [
       "Modular design for seamless future local LLM & Video upscaling extensions"
     ],
     roadmap: ["AI Video Enhancement & Frame Interpolation", "Local LLM Integration (via Ollama)", "Text-to-Image / Video Generative modules"],
-    videoUrl: "/videos/OneWorld.mp4"
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-41732-large.mp4"
   },
   {
     id: "fillflow",

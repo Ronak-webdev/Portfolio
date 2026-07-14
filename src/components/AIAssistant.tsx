@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, memo } from "react";
-import { MessageSquare, Send, X, Bot, User, Sparkles, HelpCircle, CornerDownLeft } from "lucide-react";
+import { MessageSquare, Send, X, Bot, User, HelpCircle, CornerDownLeft } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { synth, NOTES } from "./AmbientSound";
 
@@ -87,23 +87,17 @@ const AIAssistant = memo(function AIAssistant() {
       {/* Floating Chat Button */}
       <motion.button
         id="ai-twin-btn"
-        whileHover={{ scale: 1.12 }}
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => {
           setIsOpen(true);
           synth.playNote(329.63, "triangle", 0.3); // E4 tone
         }}
-        className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 bg-[#09070f] text-white rounded-full cursor-pointer shadow-2xl border border-purple-500/40 group overflow-visible"
+        className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 bg-white/90 backdrop-blur-md text-neutral-900 rounded-full cursor-pointer shadow-xl border border-neutral-200 group overflow-visible"
         title="Chat with Ronak's AI Twin"
       >
-        {/* Infinite Spinning Glowing Radar Rings */}
-        <div style={{ willChange: "transform" }} className="absolute inset-0 rounded-full border border-dashed border-purple-500/60 animate-[spin_10s_linear_infinite]" />
-        <div style={{ willChange: "transform" }} className="absolute -inset-1.5 rounded-full border border-dashed border-cyan-400/40 animate-[spin_15s_linear_infinite_reverse]" />
-        <div style={{ willChange: "transform, opacity", animationDuration: "3s" }} className="absolute -inset-3 rounded-full bg-purple-500/5 animate-ping opacity-60" />
-        
-        {/* Robot-like center core */}
-        <div className="relative w-10 h-10 rounded-full bg-gradient-to-tr from-[#13111c] to-[#251e3a] border border-purple-500/30 flex items-center justify-center shadow-inner group-hover:border-cyan-400/50 transition-colors">
-          <Bot className="w-5.5 h-5.5 text-purple-400 group-hover:text-cyan-400 group-hover:scale-110 transition-all duration-300" />
+        <div className="relative w-10 h-10 rounded-full bg-neutral-50 flex items-center justify-center group-hover:bg-neutral-100 transition-colors">
+          <Bot className="w-5 h-5 text-neutral-600 group-hover:text-neutral-900 transition-all duration-300" />
         </div>
       </motion.button>
 
@@ -115,22 +109,22 @@ const AIAssistant = memo(function AIAssistant() {
             animate={{ opacity: 1, scale: 1, y: 0, x: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 30, x: 20 }}
             transition={{ type: "spring", damping: 20, stiffness: 300 }}
-            className="fixed bottom-24 right-6 z-50 w-full max-w-md h-[550px] bg-neutral-950 border border-neutral-800 rounded-2xl shadow-2xl shadow-black overflow-hidden flex flex-col"
+            className="fixed bottom-24 right-6 z-50 w-full max-w-md h-[550px] bg-white border border-neutral-200 rounded-2xl shadow-2xl shadow-black/10 overflow-hidden flex flex-col"
           >
             {/* Header */}
-            <div className="p-4 bg-gradient-to-r from-neutral-900 to-neutral-950 border-b border-neutral-800 flex items-center justify-between">
+            <div className="p-4 bg-neutral-50 border-b border-neutral-200 flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <div className="relative">
-                  <div className="w-9 h-9 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400">
-                    <Bot className="w-5 h-5 animate-pulse" />
+                  <div className="w-9 h-9 rounded-full bg-white border border-neutral-200 flex items-center justify-center text-neutral-600 shadow-sm">
+                    <Bot className="w-4.5 h-4.5 animate-pulse" />
                   </div>
-                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-purple-500 border-2 border-neutral-950 rounded-full" />
+                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-white flex items-center gap-1.5">
-                    Ronak's AI Twin <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                  <h4 className="text-sm font-semibold text-neutral-900 flex items-center gap-1.5">
+                    Ronak's AI Twin
                   </h4>
-                  <p className="text-[10px] font-mono text-purple-400/80 uppercase tracking-wider">
+                  <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
                     Online • AI Career Agent
                   </p>
                 </div>
@@ -140,14 +134,14 @@ const AIAssistant = memo(function AIAssistant() {
                   setIsOpen(false);
                   synth.playNote(220.0, "triangle", 0.25); // A3 tone
                 }}
-                className="p-1.5 rounded-lg hover:bg-neutral-900 text-neutral-400 hover:text-white transition-colors cursor-pointer"
+                className="p-1.5 rounded-lg hover:bg-neutral-200 text-neutral-400 hover:text-neutral-900 transition-colors cursor-pointer"
               >
                 <X className="w-4.5 h-4.5" />
               </button>
             </div>
 
             {/* Chat History */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-3.5 scrollbar-thin scrollbar-thumb-neutral-800 scrollbar-track-transparent">
+            <div className="flex-1 overflow-y-auto p-4 space-y-3.5 scrollbar-thin scrollbar-thumb-neutral-200 scrollbar-track-transparent">
               {messages.map((m, idx) => (
                 <div
                   key={idx}
@@ -156,19 +150,19 @@ const AIAssistant = memo(function AIAssistant() {
                   }`}
                 >
                   <div
-                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border text-xs ${
+                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border text-xs shadow-sm ${
                       m.sender === "user"
-                        ? "bg-neutral-800 border-neutral-700 text-white"
-                        : "bg-purple-950/30 border-purple-500/20 text-purple-400"
+                        ? "bg-neutral-900 border-neutral-800 text-white"
+                        : "bg-white border-neutral-200 text-neutral-600"
                     }`}
                   >
                     {m.sender === "user" ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
                   </div>
                   <div
-                    className={`px-3 py-2 text-sm leading-relaxed rounded-xl ${
+                    className={`px-3 py-2 text-sm leading-relaxed rounded-xl shadow-sm ${
                       m.sender === "user"
-                        ? "bg-purple-600 text-white rounded-tr-none"
-                        : "bg-neutral-900 border border-neutral-800 text-neutral-200 rounded-tl-none"
+                        ? "bg-neutral-900 text-white rounded-tr-none"
+                        : "bg-neutral-50 border border-neutral-100 text-neutral-800 rounded-tl-none"
                     }`}
                   >
                     {m.text}
@@ -177,13 +171,13 @@ const AIAssistant = memo(function AIAssistant() {
               ))}
               {loading && (
                 <div className="flex gap-2.5 mr-auto max-w-[85%]">
-                  <div className="w-7 h-7 rounded-full bg-purple-950/30 border border-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
+                  <div className="w-7 h-7 rounded-full bg-white border border-neutral-200 text-neutral-600 shadow-sm flex items-center justify-center shrink-0">
                     <Bot className="w-4 h-4" />
                   </div>
-                  <div className="px-4 py-3 bg-neutral-900 border border-neutral-800 rounded-xl rounded-tl-none flex items-center gap-1">
-                    <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                  <div className="px-4 py-3 bg-neutral-50 border border-neutral-100 rounded-xl rounded-tl-none shadow-sm flex items-center gap-1">
+                    <div className="w-1.5 h-1.5 bg-neutral-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                    <div className="w-1.5 h-1.5 bg-neutral-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                    <div className="w-1.5 h-1.5 bg-neutral-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
                   </div>
                 </div>
               )}
@@ -192,9 +186,9 @@ const AIAssistant = memo(function AIAssistant() {
 
             {/* Suggestions */}
             {messages.length <= 2 && (
-              <div className="px-4 py-2 bg-neutral-950/80 border-t border-neutral-900">
-                <p className="text-[10px] font-mono text-neutral-500 flex items-center gap-1 mb-1.5">
-                  <HelpCircle className="w-3 h-3 text-purple-500" />
+              <div className="px-4 py-2 bg-white border-t border-neutral-100">
+                <p className="text-[10px] font-mono text-neutral-400 flex items-center gap-1 mb-1.5">
+                  <HelpCircle className="w-3 h-3" />
                   SUGGESTED QUESTIONS
                 </p>
                 <div className="flex flex-wrap gap-1.5">
@@ -202,7 +196,7 @@ const AIAssistant = memo(function AIAssistant() {
                     <button
                       key={idx}
                       onClick={() => handleSendMessage(s)}
-                      className="text-[11px] font-mono bg-neutral-900 hover:bg-neutral-800 text-neutral-300 hover:text-purple-400 border border-neutral-800 hover:border-purple-500/20 px-2.5 py-1 rounded-full cursor-pointer transition-all"
+                      className="text-[11px] font-mono bg-neutral-50 hover:bg-neutral-100 text-neutral-600 hover:text-neutral-900 border border-neutral-200 hover:border-neutral-300 px-2.5 py-1 rounded-full cursor-pointer transition-all shadow-sm"
                     >
                       {s}
                     </button>
@@ -217,20 +211,20 @@ const AIAssistant = memo(function AIAssistant() {
                 e.preventDefault();
                 handleSendMessage(input);
               }}
-              className="p-3.5 bg-neutral-900/40 border-t border-neutral-800 flex items-center gap-2"
+              className="p-3.5 bg-white border-t border-neutral-200 flex items-center gap-2"
             >
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about Ronak's skills, projects..."
-                className="flex-1 bg-neutral-950 border border-neutral-800 rounded-xl px-3.5 py-2 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-purple-500/50 focus:ring-0 font-mono transition-all"
+                className="flex-1 bg-neutral-50 border border-neutral-200 rounded-xl px-3.5 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-neutral-400 focus:ring-0 font-mono transition-all shadow-inner"
                 disabled={loading}
               />
               <button
                 type="submit"
                 disabled={!input.trim() || loading}
-                className="p-2.5 bg-purple-600 hover:bg-purple-50 disabled:bg-neutral-800 disabled:text-neutral-600 text-white rounded-xl transition-all cursor-pointer flex items-center justify-center shrink-0"
+                className="p-2.5 bg-neutral-900 hover:bg-neutral-800 disabled:bg-neutral-100 disabled:text-neutral-400 text-white rounded-xl transition-all cursor-pointer flex items-center justify-center shrink-0 shadow-sm"
               >
                 <Send className="w-4.5 h-4.5 fill-current" />
               </button>

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, MouseEvent } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { Search, ExternalLink, Github, Sparkles, X, ChevronRight, BarChart3, AlertTriangle, Lightbulb, Compass, Play } from "lucide-react";
+import { Search, ExternalLink, Github, X, ChevronRight, BarChart3, AlertTriangle, Lightbulb, Compass, Play } from "lucide-react";
 import { PROJECTS, Project } from "../data";
 import { synth, NOTES } from "./AmbientSound";
 import { Icon } from "@iconify/react";

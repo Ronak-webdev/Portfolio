@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, memo } from "react";
-import { Terminal, X, ChevronRight, Play, Sparkles } from "lucide-react";
+import { Terminal, X, ChevronRight, Play } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { synth, NOTES } from "./AmbientSound";
 import { PERSONAL_INFO, PROJECTS, SKILL_CATEGORIES } from "../data";
@@ -261,7 +261,6 @@ Core Focus: Bridging GPU-accelerated deep learning (PyTorch, YOLOv8, CNN OCR)
                   >
                     {log.type === "ai" && (
                       <div className="flex items-center gap-1.5 text-xs text-purple-400 mb-1.5 font-bold uppercase tracking-wider">
-                        <Sparkles className="w-3 h-3" />
                         AI Career Assistant
                       </div>
                     )}

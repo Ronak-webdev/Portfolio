@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { User, Sparkles, Heart, Target, Compass, Music, Flame } from "lucide-react";
+import { User, Heart, Target, Compass, Music, Flame } from "lucide-react";
 import { PERSONAL_INFO } from "../data";
 import { synth, NOTES } from "./AmbientSound";
 import BorderGlow from "./BorderGlow";
@@ -137,7 +137,7 @@ export default function About() {
                       ) : idx === 2 ? (
                         <Target className="w-4 h-4" />
                       ) : (
-                        <Sparkles className="w-4 h-4" />
+                        <Flame className="w-4 h-4" />
                       )}
                     </div>
                     <div>
@@ -176,7 +176,7 @@ export default function About() {
                   </div>
                   <div>
                     <h5 className="text-base font-bold text-neutral-900 font-sans flex items-center gap-1.5">
-                      Creative Balance <Sparkles className="w-3.5 h-3.5 text-purple-500" />
+                      Creative Balance
                     </h5>
                     <p className="text-xs text-neutral-500 leading-relaxed font-sans mt-1 max-w-xl">
                       Outside of deep learning pipelines, I balance analytical thought by playing the <strong>Piano</strong>, the <strong>Harmonium</strong>, and singing classical vocal arrangements. This fuels spatial creativity and patient debugging mindsets.

@@ -1,6 +1,6 @@
 import React, { useState, useRef, MouseEvent, useEffect, useCallback } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
-import { Award, Sparkles, Cpu } from "lucide-react";
+import { Award, Cpu } from "lucide-react";
 import { synth } from "./AmbientSound";
 import BorderGlow from "./BorderGlow";
 import { Icon } from "@iconify/react";
@@ -376,12 +376,11 @@ export default function Skills() {
         {/* Central visual text header */}
         <div className="relative z-20 text-center px-4 max-w-xl pointer-events-none">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             className="flex items-center justify-center gap-2 mb-3"
           >
-            <Sparkles className="w-4 h-4 text-purple-600" />
             <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-purple-600 font-semibold">Interactive Tech Cosmos</span>
           </motion.div>
           <h3 className="text-3xl md:text-5xl font-sans font-black tracking-tight text-neutral-900 mb-4">

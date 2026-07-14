@@ -1,0 +1,6 @@
+{
+  "name": "Ronak Prajapati Portfolio",
+  "description": "An ultra-premium, highly animated interactive portfolio and AI Career Assistant for AI Engineer & Full-Stack Developer Ronak Prajapati.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

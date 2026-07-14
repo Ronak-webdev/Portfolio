@@ -93,7 +93,7 @@ const AIAssistant = memo(function AIAssistant() {
           setIsOpen(true);
           synth.playNote(329.63, "triangle", 0.3); // E4 tone
         }}
-        className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 bg-white/90 backdrop-blur-md text-neutral-900 rounded-full cursor-pointer shadow-xl border border-neutral-200 group overflow-visible"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 flex items-center justify-center w-14 h-14 bg-white/90 backdrop-blur-md text-neutral-900 rounded-full cursor-pointer shadow-xl border border-neutral-200 group overflow-visible"
         title="Chat with Ronak's AI Twin"
       >
         <div className="relative w-10 h-10 rounded-full bg-neutral-50 flex items-center justify-center group-hover:bg-neutral-100 transition-colors">
@@ -109,7 +109,8 @@ const AIAssistant = memo(function AIAssistant() {
             animate={{ opacity: 1, scale: 1, y: 0, x: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 30, x: 20 }}
             transition={{ type: "spring", damping: 20, stiffness: 300 }}
-            className="fixed bottom-24 right-6 z-50 w-full max-w-md h-[550px] bg-white border border-neutral-200 rounded-2xl shadow-2xl shadow-black/10 overflow-hidden flex flex-col"
+            className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-50 w-[calc(100vw-2rem)] md:w-full max-w-md h-[500px] md:h-[550px] max-h-[80vh] bg-white border border-neutral-200 rounded-2xl shadow-2xl shadow-black/10 overflow-hidden flex flex-col font-['Poppins']"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             {/* Header */}
             <div className="p-4 bg-neutral-50 border-b border-neutral-200 flex items-center justify-between">
@@ -124,7 +125,7 @@ const AIAssistant = memo(function AIAssistant() {
                   <h4 className="text-sm font-semibold text-neutral-900 flex items-center gap-1.5">
                     Ronak's AI Twin
                   </h4>
-                  <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
+                  <p className="text-[10px] text-neutral-500 uppercase tracking-wider">
                     Online • AI Career Agent
                   </p>
                 </div>
@@ -187,7 +188,7 @@ const AIAssistant = memo(function AIAssistant() {
             {/* Suggestions */}
             {messages.length <= 2 && (
               <div className="px-4 py-2 bg-white border-t border-neutral-100">
-                <p className="text-[10px] font-mono text-neutral-400 flex items-center gap-1 mb-1.5">
+                <p className="text-[10px] text-neutral-400 flex items-center gap-1 mb-1.5">
                   <HelpCircle className="w-3 h-3" />
                   SUGGESTED QUESTIONS
                 </p>
@@ -196,7 +197,7 @@ const AIAssistant = memo(function AIAssistant() {
                     <button
                       key={idx}
                       onClick={() => handleSendMessage(s)}
-                      className="text-[11px] font-mono bg-neutral-50 hover:bg-neutral-100 text-neutral-600 hover:text-neutral-900 border border-neutral-200 hover:border-neutral-300 px-2.5 py-1 rounded-full cursor-pointer transition-all shadow-sm"
+                      className="text-[11px] bg-neutral-50 hover:bg-neutral-100 text-neutral-600 hover:text-neutral-900 border border-neutral-200 hover:border-neutral-300 px-2.5 py-1 rounded-full cursor-pointer transition-all shadow-sm"
                     >
                       {s}
                     </button>
@@ -218,7 +219,7 @@ const AIAssistant = memo(function AIAssistant() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about Ronak's skills, projects..."
-                className="flex-1 bg-neutral-50 border border-neutral-200 rounded-xl px-3.5 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-neutral-400 focus:ring-0 font-mono transition-all shadow-inner"
+                className="flex-1 bg-neutral-50 border border-neutral-200 rounded-xl px-3.5 py-2 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-neutral-400 focus:ring-0 transition-all shadow-inner"
                 disabled={loading}
               />
               <button

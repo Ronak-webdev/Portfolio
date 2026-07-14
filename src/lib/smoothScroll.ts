@@ -15,8 +15,8 @@ export function initLenis(): Lenis {
     easing: (t: number) => 1 - Math.pow(1 - t, 3),
     smoothWheel: true,
     wheelMultiplier: 1,
-    touchMultiplier: 1.15,
-    syncTouch: false,
+    touchMultiplier: 1.5,
+    syncTouch: true,
   });
 
   const raf = (time: number) => {

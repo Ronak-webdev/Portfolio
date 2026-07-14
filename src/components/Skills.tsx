@@ -374,7 +374,7 @@ export default function Skills() {
         </div>
 
         {/* Central visual text header */}
-        <div className="relative z-20 text-center px-4 max-w-xl pointer-events-none">
+        <div className="relative z-20 text-center px-6 py-8 max-w-xl pointer-events-none bg-white/80 sm:bg-transparent backdrop-blur-lg sm:backdrop-blur-none rounded-3xl border border-neutral-200/50 sm:border-transparent shadow-xl sm:shadow-none mx-4 sm:mx-0">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

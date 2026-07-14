@@ -170,7 +170,7 @@ export default function App() {
 
           {/* Floating Auxiliary Tools */}
           <DeveloperConsole />
-          <div className="fixed bottom-6 left-17 z-40">
+          <div className="fixed bottom-4 left-4 md:bottom-6 md:left-6 z-40">
             <AmbientSound />
           </div>
           <AIAssistant />
